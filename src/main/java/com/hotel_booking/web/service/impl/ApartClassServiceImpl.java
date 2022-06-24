@@ -21,7 +21,7 @@ public class ApartClassServiceImpl implements ApartClassService {
 
     @Override
     public ApartClass getById(Integer id) {
-        return null;
+        return apartClassRepository.getById(id);
     }
 
     @Override

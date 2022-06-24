@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ReservationService {
     List<Reservation> getAll();
-    Reservation getById(Integer id);
+    Reservation getById(Integer reservationNumber);
     Reservation getByCheckInDate (Date checkInDate);
     boolean save(Reservation reservation);
 }

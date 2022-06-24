@@ -6,25 +6,42 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Room reservation</title>
+  <title>Invoice</title>
 </head>
 
 <body>
 <div>
-  <form:form method="POST" modelAttribute="reservationForm">
-    <h2>Room booking</h2>
+      <c:forEach  items="${apartNumbers}" var ="apartNumber">
+        ${apartNumber.number} - ${apartNumber.apartClassId} - ${apartNumber.apartSizeId}
+      </c:forEach><br>
+</div>
+<div>
+  <form:form method="POST" modelAttribute="newInvoice">
+    <h2>Accept or cancel reservation</h2>
     <div>
-          <form:input type="text" path="passportData" placeholder="Write your document number"
+         <form:input type="text" path="id" placeholder="Reservation number"
                       autofocus="true"></form:input>
-          <form:errors path="passportData"></form:errors>
-            ${passportDataError}
+         <form:errors path="id"></form:errors>
+            ${idError}
     </div>
     <div>
-          <form:input type="text" path="userId" placeholder="UserId"
+          <form:input type="text" path="userId" placeholder="Write user ID"
                       autofocus="true"></form:input>
           <form:errors path="userId"></form:errors>
             ${userIdError}
     </div>
+    <div>
+          <form:input type="text" path="number" placeholder="Apartment number"
+                      autofocus="true"></form:input>
+          <form:errors path="number"></form:errors>
+            ${numberError}
+    </div>
+    <div>
+              <form:input type="text" path="price" placeholder="Price for payment"
+                          autofocus="true"></form:input>
+              <form:errors path="price"></form:errors>
+                ${priceError}
+        </div>
     <div>
           <form:input type="text"  path="checkInDate" placeholder="Arrival date"
                       autofocus="true"></form:input>
@@ -37,19 +54,8 @@
           <form:errors path="checkOutDate"></form:errors>
             ${checkOutDateError}
     </div>
-    <div>
-          <form:input type="text" path="prefApClass" placeholder="Choose apartment class"
-                      autofocus="true"></form:input>
-          <form:errors path="prefApClass"></form:errors>
-            ${prefApClassError}
-    </div>
-    <div>
-              <form:input type="text" path="prefApSize" placeholder="Choose apartment size"
-                          autofocus="true"></form:input>
-              <form:errors path="prefApSize"></form:errors>
-                ${prefApartClassError}
-        </div>
-    <button type="submit">Book</button>
+
+    <button type="submit">Send invoice</button>
   </form:form>
     <a href="/">Main</a>
  </div>

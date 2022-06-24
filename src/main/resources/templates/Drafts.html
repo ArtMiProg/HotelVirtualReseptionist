@@ -1,0 +1,10 @@
+Date a = reservation.getCheckInDate();
+Date b = reservation.getCheckOutDate();
+
+List<Date> bookedDates = new ArrayList<>();
+    calendar.setTime(a);
+    while (calendar.getTime().before(b)) {
+    Date fromBookedPeriod = calendar.getTime();
+    bookedDates.add(fromBookedPeriod);
+    calendar.add(Calendar.DATE, 1);
+    }

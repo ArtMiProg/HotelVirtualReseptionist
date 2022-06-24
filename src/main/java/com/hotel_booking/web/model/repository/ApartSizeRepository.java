@@ -1,9 +1,9 @@
 package com.hotel_booking.web.model.repository;
 
-import com.hotel_booking.web.model.entity.ApartmentNumber;
+import com.hotel_booking.web.model.entity.ApartSize;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ApartmentNumberRepository extends JpaRepository <ApartmentNumber, Integer> {
+public interface ApartSizeRepository extends JpaRepository<ApartSize, Integer> {
 }

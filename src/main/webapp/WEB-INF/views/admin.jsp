@@ -38,6 +38,9 @@
       </tr>
     </c:forEach>
   </table>
+  </div>
+
+  <a href="/admin/reservations">Review reservations</a><br>
   <a href="/">Main</a>
 </div>
 </body>

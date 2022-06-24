@@ -1,0 +1,55 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Manage reservations</title>
+</head>
+
+<body>
+ <div>
+  <table>
+      <thead>
+      <th>Reservation Number</th>
+      <th>Passport Data</th>
+      <th>User ID</th>
+      <th>Check in date</th>
+      <th>Check out date</th>
+      <th>Preferred apartment class</th>
+      <th>Preferred apartment size</th>
+      </thead>
+      <c:forEach items="${allReservations}" var="reservation">
+        <tr>
+          <td>${reservation.reservationNumber}</td>
+          <td>${reservation.passportData}</td>
+          <td>${reservation.userId}</td>
+          <td>${reservation.checkInDate}</td>
+          <td>${reservation.checkOutDate}</td>
+          <td>${reservation.prefApClass}</td>
+          <td>${reservation.prefApSize}</td>
+          <td>
+            <form action="${pageContext.request.contextPath}/admin/invoice" method="get">
+              <input type="hidden" name="reservationNumber" value="${reservation.reservationNumber}"/>
+              <input type="hidden" name="userId" value="${reservation.userId}"/>
+              <input type="hidden" name="checkInDate" value="${reservation.checkInDate}"/>
+              <input type="hidden" name="checkOutDate" value="${reservation.checkOutDate}"/>
+              <input type="hidden" name="action" value="review"/>
+              <button type="submit">Review</button>
+            </form>
+          </td>
+          <td>
+            <form action="${pageContext.request.contextPath}/admin/reservations" method="post">
+              <input type="hidden" name="reservationNumber" value="${reservation.reservationNumber}"/>
+              <input type="hidden" name="action" value="delete"/>
+              <button type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+      </c:forEach>
+    </table>
+     <a href="/">Main</a>
+    </div>
+    </body>
+    </html>

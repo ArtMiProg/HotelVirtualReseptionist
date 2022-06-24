@@ -21,9 +21,13 @@ public class Reservation {
     private Date checkInDate;
     @Column (name = "check_out_date")
     private Date checkOutDate;
-    @Column (name = "apart_number_id")
-    private Integer apartNumberId;
+    @Column (name = "preferred_ap_class")
+    private String prefApClass;
+    @Column (name = "preferred_ap_size")
+    private Integer prefApSize;
 
 
-
+    public boolean isPresent() {
+        return true;
+    }
 }

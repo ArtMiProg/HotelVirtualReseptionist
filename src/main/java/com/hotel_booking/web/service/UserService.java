@@ -1,6 +1,5 @@
 package com.hotel_booking.web.service;
 
-import com.hotel_booking.web.model.entity.ApartClass;
 import com.hotel_booking.web.model.entity.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 

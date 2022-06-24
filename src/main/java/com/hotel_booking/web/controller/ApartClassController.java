@@ -26,17 +26,17 @@ public class ApartClassController {
     }
 
     @GetMapping(value = "/apartment_class")
-    public String apartmentClass(@RequestParam() Integer id, Model model) {
+    public String apartClass(@RequestParam() Integer id, Model model) {
         ApartClass apartClass = apartClassService.getById(id);
 
-        model.addAttribute("apartment_class", apartClass);
+        model.addAttribute("apart_class", apartClass);
 
         return "ourApartments";
     }
 
     @GetMapping(value = "/showCreateApartment_class")
     public String showCreateApartment_class() {
-        return "createApartment_class";
+        return "createApart_class";
     }
 
 }
