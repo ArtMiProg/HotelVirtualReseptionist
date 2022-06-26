@@ -22,6 +22,12 @@ public class ApartNumber {
     private Float basicPay;
     @Column (name = "cost")
     private Float cost;
+    @Column (name = "occupied")
+    public Boolean isOccupied;
+
+
+
+
 
 
 

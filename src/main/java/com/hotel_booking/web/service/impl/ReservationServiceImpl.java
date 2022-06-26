@@ -30,6 +30,10 @@ public class ReservationServiceImpl implements ReservationService {
         return reservationRepository.getById(reservationNumber);
     }
 
+    @Override
+    public List<Reservation> getReservationsByUserId(Integer userId) {
+        return reservationRepository.getReservationByUserId(userId);
+    }
 
     @Override
     public Reservation getByCheckInDate(Date checkInDate) {

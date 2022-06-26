@@ -1,14 +1,17 @@
 package com.hotel_booking.web.controller;
 
 import com.hotel_booking.web.model.entity.Reservation;
+import com.hotel_booking.web.model.entity.User;
 import com.hotel_booking.web.service.impl.ReservationServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
@@ -24,7 +27,9 @@ public class ReservationController {
 
     @GetMapping("/reservation")
     public String reservation(Model model) {
-        model.addAttribute("reservationForm", new Reservation());
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Integer userId = user.getId();
+        model.addAttribute("reservationForm", new Reservation(userId));
         return "reservation";
     }
 

@@ -25,9 +25,16 @@ public class Reservation {
     private String prefApClass;
     @Column (name = "preferred_ap_size")
     private Integer prefApSize;
+    @Column (name = "state")
+    private Boolean isConfirmed = false;
 
+    public Reservation(){
 
-    public boolean isPresent() {
-        return true;
     }
+
+    public Reservation(Integer userId){
+        this.userId = userId;
+    }
+
+
 }

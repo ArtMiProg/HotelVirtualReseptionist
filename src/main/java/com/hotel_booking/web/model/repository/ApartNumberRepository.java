@@ -12,6 +12,10 @@ import java.util.List;
 @Repository
 public interface ApartNumberRepository extends JpaRepository <ApartNumber, Integer> {
     ApartNumber getApartNumberById (Integer id);
+    ApartNumber getApartNumberByNumber (Integer number);
+    List<ApartNumber> getByIsOccupied (boolean isOccupied);
+
+
 
 
     @Query("from ApartNumber apartNumber where apartNumber.number = :number")

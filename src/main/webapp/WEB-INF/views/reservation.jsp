@@ -11,6 +11,9 @@
 
 <body>
 <div>
+
+</div>
+<div>
   <form:form method="POST" modelAttribute="reservationForm">
     <h2>Room booking</h2>
     <div>
@@ -44,13 +47,13 @@
             ${prefApClassError}
     </div>
     <div>
-              <form:input type="text" path="prefApSize" placeholder="Choose apartment size"
-                          autofocus="true"></form:input>
-              <form:errors path="prefApSize"></form:errors>
-                ${prefApartClassError}
-        </div>
+          <form:input type="text" path="prefApSize" placeholder="Choose number of rooms in your apartment: 1 , 2 or 3"
+                      autofocus="true"></form:input>
+          <form:errors path="prefApSize"></form:errors>
+             ${prefApSizeError}
+    </div>
     <button type="submit">Book</button>
-  </form:form>
+  </form:form><br>
     <a href="/">Main</a>
  </div>
 </body>

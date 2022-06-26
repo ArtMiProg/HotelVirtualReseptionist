@@ -5,6 +5,7 @@ import com.hotel_booking.web.model.entity.Invoice;
 import com.hotel_booking.web.model.entity.Reservation;
 import com.hotel_booking.web.model.entity.User;
 import com.hotel_booking.web.model.repository.ApartNumberRepository;
+import com.hotel_booking.web.service.ApartNumberService;
 import com.hotel_booking.web.service.InvoiceService;
 import com.hotel_booking.web.service.ReservationService;
 import com.hotel_booking.web.service.UserService;
@@ -14,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -26,6 +28,7 @@ public class AdminController {
     private InvoiceService invoiceService;
     @Autowired
     private ApartNumberRepository apartNumberRepository;
+
 
     @GetMapping(value = "/admin")
     public String userList(Model model) {
@@ -74,8 +77,10 @@ public class AdminController {
                              Date checkInDate,
                              Date checkOutDate,
                              Model model) {
-        List<ApartNumber> apartNumbers = apartNumberRepository.findAll();
+        List<ApartNumber> apartNumbers = apartNumberRepository.getByIsOccupied(false);
+
         model.addAttribute("apartNumbers", apartNumbers);
+
         model.addAttribute("newInvoice", new Invoice(reservationNumber,
                 userId,
                 checkInDate,

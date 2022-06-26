@@ -14,4 +14,6 @@ public interface InvoiceService {
 
     boolean setInvoice (Invoice invoice);
     boolean deleteReservation (Integer reservationNumber);
+
+    List<Invoice> getByUserId(Integer userid);
 }

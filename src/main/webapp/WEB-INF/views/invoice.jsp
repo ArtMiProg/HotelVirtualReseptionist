@@ -12,7 +12,7 @@
 <body>
 <div>
       <c:forEach  items="${apartNumbers}" var ="apartNumber">
-        ${apartNumber.number} - ${apartNumber.apartClassId} - ${apartNumber.apartSizeId}
+        ${apartNumber.number} - Class: ${apartNumber.apartClassId} Number of rooms: ${apartNumber.apartSizeId} <br>
       </c:forEach><br>
 </div>
 <div>

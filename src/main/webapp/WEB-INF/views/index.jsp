@@ -23,6 +23,9 @@
   <sec:authorize access="isAuthenticated()">
     <h4><a href="/logout">Logout</a></h4>
   </sec:authorize>
+  <sec:authorize access="isAuthenticated()">
+    <h4><a href="/account">My account</a></h4>
+  </sec:authorize>
   <h4><a href="/admin"> Administrate (just admin)</a></h4>
 
   <h4><a href="/apart_classes"> Discover our apartments (just user)</a></h4>

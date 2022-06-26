@@ -10,6 +10,10 @@ import java.util.List;
 public interface ReservationService {
     List<Reservation> getAll();
     Reservation getById(Integer reservationNumber);
+
+    List<Reservation> getReservationsByUserId(Integer userId);
+
     Reservation getByCheckInDate (Date checkInDate);
     boolean save(Reservation reservation);
+
 }

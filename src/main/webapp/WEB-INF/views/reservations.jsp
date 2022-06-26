@@ -19,6 +19,7 @@
       <th>Check out date</th>
       <th>Preferred apartment class</th>
       <th>Preferred apartment size</th>
+      <th>Confirmation by admin</th>
       </thead>
       <c:forEach items="${allReservations}" var="reservation">
         <tr>
@@ -29,6 +30,7 @@
           <td>${reservation.checkOutDate}</td>
           <td>${reservation.prefApClass}</td>
           <td>${reservation.prefApSize}</td>
+          <td>${reservation.isConfirmed}</td>
           <td>
             <form action="${pageContext.request.contextPath}/admin/invoice" method="get">
               <input type="hidden" name="reservationNumber" value="${reservation.reservationNumber}"/>
