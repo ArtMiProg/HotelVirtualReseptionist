@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface ApartClassService {
     List<ApartClass> getAll();
+
     ApartClass getById(Integer id);
+
     void save(ApartClass apartClass);
 
 

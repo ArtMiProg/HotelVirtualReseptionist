@@ -6,11 +6,12 @@
 <head>
   <meta charset="utf-8">
   <title>My account</title>
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/sources/css/design.css"/>
 </head>
 
 <body>
-<h4>${user.username}</h4>
-<h4>Your ID is ${user.id}</h>
+<h2>${user.username}</h2>
+<h2>Your ID is ${user.id}</2>
 <div>-------------------</div>
 <div>
 <h4> You reservations details </h4>
@@ -50,7 +51,7 @@
         </tr>
        </c:forEach>
   </table>
-  <a href="/">Main</a>
+  <div id="footer"><a href="/"><h2>Main</h2></a></div>
 </div>
 </body>
 </html>

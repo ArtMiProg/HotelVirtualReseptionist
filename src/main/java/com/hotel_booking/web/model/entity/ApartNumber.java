@@ -12,23 +12,18 @@ public class ApartNumber {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column (name = "apart_number")
+    @Column(name = "apart_number")
     private Integer number;
-    @Column (name = "apart_class_id")
+    @Column(name = "apart_class_id")
     private Integer apartClassId;
-    @Column (name = "apart_size_id")
+    @Column(name = "apart_size_id")
     private Integer apartSizeId;
-    @Column (name = "basic_pay")
-    private Float basicPay;
-    @Column (name = "cost")
-    private Float cost;
-    @Column (name = "occupied")
+    @Column(name = "basic_pay")
+    private Float basicPay; /* This attribute will be used in near future */
+    @Column(name = "cost")
+    private Float cost; /* This attribute will be used in near future */
+    @Column(name = "occupied")
     public Boolean isOccupied;
-
-
-
-
-
 
 
 }

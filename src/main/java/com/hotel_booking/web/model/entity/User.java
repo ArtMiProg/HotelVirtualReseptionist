@@ -20,16 +20,24 @@ public class User implements UserDetails {
     private String name;
     @Column
     private String surname;
-    @Column (name = "role_id")
+    @Column(name = "role_id")
     private int roleId;
-    @Size(min=2, message = "At least 5 characters")
+    @Size(min = 2, message = "At least 5 characters")
     private String username;
-    @Size(min=2, message = "At least 5 characters")
+    @Size(min = 2, message = "At least 5 characters")
     private String password;
     @Transient
     private String passwordConfirm;
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
+
+    public User() {
+
+    }
+
+    public User(Integer roleId) {
+        this.roleId = roleId;
+    }
 
     @Override
     public String getUsername() {
@@ -55,6 +63,7 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return (Collection<? extends GrantedAuthority>) getRoles();
@@ -64,4 +73,6 @@ public class User implements UserDetails {
     public String getPassword() {
         return password;
     }
+
+
 }

@@ -19,8 +19,8 @@ public class RegistrationController {
 
     @GetMapping("/registration")
     public String registration(Model model) {
-        model.addAttribute("userForm", new User());
-
+        Integer roleId = 6;
+        model.addAttribute("userForm", new User(roleId));
         return "registration";
     }
 
@@ -30,11 +30,11 @@ public class RegistrationController {
         if (bindingResult.hasErrors()) {
             return "registration";
         }
-        if (!userForm.getPassword().equals(userForm.getPasswordConfirm())){
+        if (!userForm.getPassword().equals(userForm.getPasswordConfirm())) {
             model.addAttribute("passwordError", "Passwords don't correspond");
             return "registration";
         }
-        if (!userServiceImpl.saveUser(userForm)){
+        if (!userServiceImpl.saveUser(userForm)) {
             model.addAttribute("usernameError", "User with such name already exists");
             return "registration";
         }

@@ -15,7 +15,9 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ReservationServiceImpl implements ReservationService {
+
     Calendar calendar = new GregorianCalendar();
+
     @Autowired
     ReservationRepository reservationRepository;
 
@@ -32,12 +34,12 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public List<Reservation> getReservationsByUserId(Integer userId) {
-        return reservationRepository.getReservationByUserId(userId);
+        return reservationRepository.getReservationsByUserId(userId);
     }
 
     @Override
     public Reservation getByCheckInDate(Date checkInDate) {
-        return null;
+        return reservationRepository.getReservationByCheckInDate(checkInDate);
     }
 
     @Override
@@ -48,10 +50,10 @@ public class ReservationServiceImpl implements ReservationService {
         if (verifiedReservation != null) {
             return false;
         }
-        if (reservation.getCheckInDate().before(calendar.getTime())){
+        if (reservation.getCheckInDate().before(calendar.getTime())) {
             return false;
         }
-        if (reservation.getCheckOutDate().before(reservation.getCheckInDate())){
+        if (reservation.getCheckOutDate().before(reservation.getCheckInDate())) {
             return false;
         }
 

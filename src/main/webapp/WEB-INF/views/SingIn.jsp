@@ -6,13 +6,14 @@
 <head>
   <meta charset="utf-8">
   <title>Log in with your account</title>
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/sources/css/design.css"/>
 </head>
-
 <body>
 <sec:authorize access="isAuthenticated()">
   <% response.sendRedirect("/"); %>
 </sec:authorize>
 <div>
+<div id="secondary">
   <form method="POST" action="/SingIn">
     <h2>Log in</h2>
     <div>
@@ -20,10 +21,10 @@
              autofocus="true"/>
       <input name="password" type="password" placeholder="Password"/>
       <button type="submit">Log In</button>
-      <h4><a href="/registration">Sing up</a></h4>
+      <div id="footer"><a href="/registration"><h2>Sing up</h2></a></div>
     </div>
   </form>
+  </div>
 </div>
-
 </body>
 </html>

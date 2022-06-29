@@ -37,6 +37,7 @@ public class UserServiceImpl implements UserService {
 
         return user;
     }
+
     @Override
     public List<User> getAll() {
         return userRepository.findAll();
@@ -60,6 +61,8 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
         return true;
     }
+
+    @Override
     public boolean deleteUser(Integer id) {
         if (userRepository.findById(id).isPresent()) {
             userRepository.deleteById(id);

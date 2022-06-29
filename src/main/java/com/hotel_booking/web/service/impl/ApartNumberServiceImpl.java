@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class ApartNumberServiceImpl implements ApartNumberService {
     @Autowired
     ApartClassRepository apartClassRepository;
-    
+
     @Override
     public String getApclassById(Integer apartClassId) {
-       ApartClass apartClass = apartClassRepository.getById(apartClassId);
-       return apartClass.getApclass();
+        ApartClass apartClass = apartClassRepository.getById(apartClassId);
+        return apartClass.getApclass();
     }
 }

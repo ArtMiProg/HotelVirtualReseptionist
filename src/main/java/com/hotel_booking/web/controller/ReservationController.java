@@ -11,16 +11,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
 public class ReservationController {
+
     @Autowired
     private ReservationServiceImpl reservationServiceImpl;
 
     @GetMapping("/apartChoosing")
-    public String apartmentNumber (Model model){
+    public String apartmentNumber(Model model) {
         model.addAttribute("apartChoosingForm");
         return "apartChoosing";
     }
@@ -40,7 +40,6 @@ public class ReservationController {
             model.addAttribute("checkInDateError", "Reservation failed");
             return "reservation";
         }
-
         return "redirect:/";
     }
 }

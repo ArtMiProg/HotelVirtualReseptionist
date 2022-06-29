@@ -33,11 +33,5 @@ public class ApartClassController {
 
         return "ourApartments";
     }
-
-    @GetMapping(value = "/showCreateApartment_class")
-    public String showCreateApartment_class() {
-        return "createApart_class";
-    }
-
 }
 

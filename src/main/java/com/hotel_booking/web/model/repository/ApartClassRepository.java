@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ApartClassRepository extends JpaRepository<ApartClass, Integer> {
-    ApartClass getById (Integer id);
+public interface ApartClassRepository extends JpaRepository<ApartClass, String> {
+    ApartClass getById(Integer id);
 
     List<ApartClass> getApartClassByApclass(String apclass);
 

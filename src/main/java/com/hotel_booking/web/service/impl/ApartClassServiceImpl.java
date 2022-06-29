@@ -4,6 +4,7 @@ import com.hotel_booking.web.model.entity.ApartClass;
 import com.hotel_booking.web.model.repository.ApartClassRepository;
 import com.hotel_booking.web.service.ApartClassService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,12 +12,13 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ApartClassServiceImpl implements ApartClassService {
-    private final ApartClassRepository apartClassRepository;
 
+    @Autowired
+    private ApartClassRepository apartClassRepository;
 
     @Override
     public List<ApartClass> getAll() {
-        return  apartClassRepository.findAll();
+        return apartClassRepository.findAll();
     }
 
     @Override

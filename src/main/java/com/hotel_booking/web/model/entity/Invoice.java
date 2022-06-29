@@ -7,24 +7,26 @@ import java.sql.Date;
 
 @Data
 @Entity
-@Table (name = "invoice")
+@Table(name = "invoice")
 public class Invoice {
     @Id
     private Integer id;
-    @Column (name = "user_id")
+    @Column(name = "user_id")
     private Integer userId;
-    @Column (name = "apart_number")
+    @Column(name = "apart_number")
     private Integer number;
-    @Column (name = "price")
+    @Column(name = "price")
     private Integer price;
-    @Column (name = "check_in_date")
+    @Column(name = "check_in_date")
     private Date checkInDate;
-    @Column (name = "check_out_date")
+    @Column(name = "check_out_date")
     private Date checkOutDate;
-    public Invoice (){
+
+    public Invoice() {
 
     }
-    public Invoice (Integer id, Integer userId, Date checkInDate, Date checkOutDate){
+
+    public Invoice(Integer id, Integer userId, Date checkInDate, Date checkOutDate) {
         this.id = id;
         this.userId = userId;
         this.checkInDate = checkInDate;

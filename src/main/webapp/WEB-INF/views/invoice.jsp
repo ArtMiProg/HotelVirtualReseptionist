@@ -7,6 +7,7 @@
 <head>
   <meta charset="utf-8">
   <title>Invoice</title>
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/sources/css/design.css"/>
 </head>
 
 <body>
@@ -15,9 +16,10 @@
         ${apartNumber.number} - Class: ${apartNumber.apartClassId} Number of rooms: ${apartNumber.apartSizeId} <br>
       </c:forEach><br>
 </div>
-<div>
+<div id="secondary">
   <form:form method="POST" modelAttribute="newInvoice">
     <h2>Accept or cancel reservation</h2>
+    <ul>
     <div>
          <form:input type="text" path="id" placeholder="Reservation number"
                       autofocus="true"></form:input>
@@ -56,8 +58,9 @@
     </div>
 
     <button type="submit">Send invoice</button>
+    </ul>
   </form:form>
-    <a href="/">Main</a>
+  <div id="footer"><a href="/"><h2>Main</h2></a></div>
  </div>
 </body>
 </html>

@@ -6,6 +6,7 @@
 <head>
   <meta charset="utf-8">
   <title>Manage reservations</title>
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/sources/css/design.css"/>
 </head>
 
 <body>
@@ -51,7 +52,7 @@
         </tr>
       </c:forEach>
     </table>
-     <a href="/">Main</a>
+     <div id="footer"><a href="/"><h2>Main</h2></a></div>
     </div>
     </body>
     </html>

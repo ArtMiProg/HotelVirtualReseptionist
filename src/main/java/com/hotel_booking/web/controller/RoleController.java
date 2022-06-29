@@ -13,6 +13,7 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 public class RoleController {
+
     private final RoleRepository roleRepository;
 
     @GetMapping(value = "/roles")

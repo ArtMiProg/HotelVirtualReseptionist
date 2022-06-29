@@ -7,54 +7,57 @@
 <head>
   <meta charset="utf-8">
   <title>Room reservation</title>
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/sources/css/design.css"/>
 </head>
 
 <body>
 <div>
 
 </div>
-<div>
+<div id="secondary">
   <form:form method="POST" modelAttribute="reservationForm">
     <h2>Room booking</h2>
-    <div>
+    <ul>
+    <li>
           <form:input type="text" path="passportData" placeholder="Write your document number"
                       autofocus="true"></form:input>
           <form:errors path="passportData"></form:errors>
             ${passportDataError}
-    </div>
-    <div>
+    </li>
+    <li>
           <form:input type="text" path="userId" placeholder="UserId"
                       autofocus="true"></form:input>
           <form:errors path="userId"></form:errors>
             ${userIdError}
-    </div>
-    <div>
+    </li>
+    <li>
           <form:input type="text"  path="checkInDate" placeholder="Arrival date"
                       autofocus="true"></form:input>
           <form:errors path="checkInDate"></form:errors>
             ${checkInDateError}
-    </div>
-    <div>
+    </li>
+    <li>
           <form:input type="text"  path="checkOutDate" placeholder="Departure date"
                       autofocus="true"></form:input>
           <form:errors path="checkOutDate"></form:errors>
             ${checkOutDateError}
-    </div>
-    <div>
-          <form:input type="text" path="prefApClass" placeholder="Choose apartment class"
+    </li>
+    <li>
+          <form:input type="text" path="prefApClass" placeholder="Choose apartment class: Econom, Standart, Lux"
                       autofocus="true"></form:input>
           <form:errors path="prefApClass"></form:errors>
             ${prefApClassError}
-    </div>
-    <div>
+    </li>
+    <li>
           <form:input type="text" path="prefApSize" placeholder="Choose number of rooms in your apartment: 1 , 2 or 3"
                       autofocus="true"></form:input>
           <form:errors path="prefApSize"></form:errors>
              ${prefApSizeError}
-    </div>
+    </li>
     <button type="submit">Book</button>
+    </ul>
   </form:form><br>
-    <a href="/">Main</a>
+  <div id="footer"><a href="/"><h2>Main</h2></a></div>
  </div>
 </body>
 </html>

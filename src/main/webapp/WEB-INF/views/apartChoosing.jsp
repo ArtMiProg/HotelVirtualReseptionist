@@ -7,6 +7,7 @@
 <head>
   <meta charset="utf-8">
   <title>Apartment choosing</title>
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/sources/css/design.css"/>
 </head>
 
 <body>
@@ -21,7 +22,7 @@
   <input type="radio" id="lux" path="apclass" value="Lux">
   <label for="lux">Lux</label>
 </form>
-<button type="submit">Select</button>
+
 
 <p>Select number of rooms in your apartment:</p>
 <form>
@@ -32,7 +33,7 @@
   <input type="radio" id="threeRoom" path="roomsQuantity" value="3">
   <label for="threeRoom">3</label>
 </form>
-<button type="submit">Select</button><br>
+
 <button type="submit">Confirm</button>
 </form:form>
 <div>

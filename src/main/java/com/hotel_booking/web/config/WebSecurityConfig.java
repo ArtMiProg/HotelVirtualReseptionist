@@ -1,6 +1,5 @@
 package com.hotel_booking.web.config;
 
-import com.hotel_booking.web.service.UserService;
 import com.hotel_booking.web.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -33,6 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/apart_classes").hasRole("USER")
 
                 .antMatchers("/", "/resources/**").permitAll()
+                .antMatchers("/sources/**").permitAll()
 
                 .anyRequest().authenticated()
                 .and()

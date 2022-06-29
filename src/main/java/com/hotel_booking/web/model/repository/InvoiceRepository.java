@@ -8,7 +8,8 @@ import java.util.List;
 
 @Repository
 public interface InvoiceRepository extends JpaRepository<Invoice, Integer> {
-    Invoice findInvoiceByNumber (Integer number);
 
-    List<Invoice> getByUserId(Integer userid);
+    Invoice findInvoiceByNumber(Integer number);
+
+    List<Invoice> getByUserId(Integer userId);
 }

@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <title>Log in with your account</title>
-
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/sources/css/design.css"/>
 </head>
 
 <body>
@@ -39,9 +39,8 @@
     </c:forEach>
   </table>
   </div>
-
-  <a href="/admin/reservations">Review reservations</a><br>
-  <a href="/">Main</a>
+  <div id="footer"><a href="/admin/reservations"><h2>Review reservations</h2></a></div>
+  <div id="footer"><a href="/"><h2>Main</h2></a></div>
 </div>
 </body>
 </html>

@@ -23,21 +23,21 @@ public class UserController {
     private InvoiceService invoiceService;
 
     @GetMapping("/account")
-    public String userAccount (Model model){
+    public String userAccount(Model model) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         model.addAttribute("user", user);
         List<Reservation> myReservations = reservationService.getReservationsByUserId(user.getId());
         model.addAttribute("myReservations", myReservations);
         List<Invoice> myInvoices = invoiceService.getByUserId(user.getId());
         List<Invoice> currentInvoices = new ArrayList<>();
-        for (Invoice inv : myInvoices){
+        for (Invoice inv : myInvoices) {
             Integer invNumber = inv.getId();
-          for (Reservation reserv : myReservations){
-              Integer reservNumber = reserv.getReservationNumber();
-              if (reservNumber.equals(invNumber)){
-                  currentInvoices.add(inv);
-              }
-          }
+            for (Reservation reserv : myReservations) {
+                Integer reservNumber = reserv.getReservationNumber();
+                if (reservNumber.equals(invNumber)) {
+                    currentInvoices.add(inv);
+                }
+            }
         }
         model.addAttribute("currentInvoices", currentInvoices);
         model.addAttribute("userAccount");
