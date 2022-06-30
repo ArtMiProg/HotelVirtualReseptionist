@@ -40,7 +40,9 @@ public class InvoiceServiceImpl implements InvoiceService {
 
     @Override
     public boolean deleteReservation(Integer reservationNumber) {
+        Invoice invoice = invoiceRepository.getById(reservationNumber);
         if (reservationRepository.findById(reservationNumber).isPresent()) {
+            apartNumberRepository.getApartNumberByNumber(invoice.getNumber()).setIsOccupied(false);
             reservationRepository.deleteById(reservationNumber);
             return true;
         }

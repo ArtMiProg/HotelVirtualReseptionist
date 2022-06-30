@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 @Controller
@@ -49,7 +50,11 @@ public class AdminController {
                              @RequestParam(required = true, defaultValue = "") String action,
                              Model model) {
         if (action.equals("delete")) {
-            userService.deleteUser(id);
+            try {
+                userService.deleteUser(id);
+            } finally {
+                return "redirect:/admin";
+            }
         }
         return "redirect:/admin";
     }
@@ -59,11 +64,11 @@ public class AdminController {
                                     @RequestParam(required = true, defaultValue = "") String action,
                                     Model model) {
         if (action.equals("review")) {
-
             return "invoice";
         }
         if (action.equals("delete")) {
             invoiceService.deleteReservation(reservationNumber);
+            return "redirect:/admin/reservations";
         }
         return "redirect:/admin/reservations";
     }
@@ -93,7 +98,7 @@ public class AdminController {
             return "invoice";
         }
 
-        return "admin";
+        return "redirect:/admin/reservations";
     }
 
     @GetMapping("/admin/get/{userId}")
