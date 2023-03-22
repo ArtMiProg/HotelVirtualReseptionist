@@ -61,6 +61,16 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
         return true;
     }
+    @Override
+    public boolean saveUserByAdmin(User user){
+        User userFromDB = userRepository.findByUsername(user.getUsername());
+        if (userFromDB != null) {
+            return false;
+        }
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        userRepository.save(user);
+        return true;
+    }
 
     @Override
     public boolean deleteUser(Integer id) {

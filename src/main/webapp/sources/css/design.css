@@ -168,10 +168,11 @@ img {
 #secondary ul li{
     display: block;
     margin: 15px 20px 20px 15px;
+    text-align: left;
  }
 
  input[type=text] {
-   width: 100%;
+   width: 70%;
    padding: 12px 20px;
    font-size: 21px;
    margin: 8px 0;
@@ -179,12 +180,28 @@ img {
  }
 
  input[type=password] {
-    width: 100%;
+    width: 70%;
     padding: 12px 20px;
     font-size: 21px;
     margin: 8px 0;
     box-sizing: border-box;
   }
+
+  input[type=date] {
+     width: 70%;
+     padding: 12px 20px;
+     font-size: 21px;
+     margin: 8px 0;
+     box-sizing: border-box;
+   }
+
+  input[type=number] {
+     width: 70%;
+     padding: 12px 20px;
+     font-size: 21px;
+     margin: 8px 0;
+     box-sizing: border-box;
+   }
 
 #submit {
    background-color: gray;

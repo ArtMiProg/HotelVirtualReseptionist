@@ -18,4 +18,5 @@ public class ApartSize {
     private Float sizeFactor; /* This attribute will be used in near future */
     @OneToMany
     private Set<ApartNumber> apartNumbers;
+
 }

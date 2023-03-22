@@ -12,6 +12,8 @@ public interface UserService extends UserDetailsService {
 
     boolean saveUser(User user);
 
+    boolean saveUserByAdmin(User user);
+
     boolean deleteUser(Integer id);
 
     List<User> userGetList(Integer idMin);

@@ -39,7 +39,12 @@
     </c:forEach>
   </table>
   </div>
+  <form action="${pageContext.request.contextPath}/admin/addUser" method="get">
+        <input type="hidden" name="action" value="add"/>
+        <button type="submit">Add a new user</button>
+  </form>
   <div id="footer"><a href="/admin/reservations"><h2>Review reservations</h2></a></div>
+  <div id="footer"><a href="/admin/manageApartments"><h2>Manage apartments</h2></a></div>
   <div id="footer"><a href="/"><h2>Main</h2></a></div>
 </div>
 </body>

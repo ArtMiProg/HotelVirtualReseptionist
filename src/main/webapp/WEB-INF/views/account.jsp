@@ -14,7 +14,7 @@
 <h2>Your ID is ${user.id}</2>
 <div>-------------------</div>
 <div>
-<h4> You reservations details </h4>
+<h4> Your reservations details </h4>
   <table>
       <thead>
       <th>Reservation Number</th>

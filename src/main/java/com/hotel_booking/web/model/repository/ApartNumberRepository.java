@@ -14,8 +14,10 @@ public interface ApartNumberRepository extends JpaRepository<ApartNumber, Intege
 
     ApartNumber getApartNumberByNumber(Integer number);
 
-    List<ApartNumber> getByIsOccupied(boolean isOccupied);
+    List<ApartNumber> getByApartClassId(Integer apartClassId);
+
+    List<ApartNumber> getByApartSizeId (Integer apartSizeId);
 
     @Query("from ApartNumber apartNumber where apartNumber.number = :number")
-    List<ApartClass> getAllApartNumbers(@Param("number") Integer numberApartNumber);
+    List<ApartNumber> getAllApartNumbers(@Param("number") Integer numberApartNumber);
 }

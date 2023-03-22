@@ -19,7 +19,7 @@
     <div>
       <input name="username" type="text" placeholder="Username"
              autofocus="true"/>
-      <input name="password" type="password" placeholder="Password"/>
+      <input name="password" type="password" placeholder="Password"/><br>
       <button type="submit">Log In</button>
       <div id="footer"><a href="/registration"><h2>Sing up</h2></a></div>
     </div>

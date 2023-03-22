@@ -31,26 +31,34 @@
             ${userIdError}
     </li>
     <li>
-          <form:input type="text"  path="checkInDate" placeholder="Arrival date"
+          <form:input type="date"  path="checkInDate" placeholder="Arrival date"
                       autofocus="true"></form:input>
           <form:errors path="checkInDate"></form:errors>
             ${checkInDateError}
     </li>
     <li>
-          <form:input type="text"  path="checkOutDate" placeholder="Departure date"
+          <form:input type="date"  path="checkOutDate" placeholder="Departure date"
                       autofocus="true"></form:input>
           <form:errors path="checkOutDate"></form:errors>
             ${checkOutDateError}
     </li>
     <li>
-          <form:input type="text" path="prefApClass" placeholder="Choose apartment class: Econom, Standart, Lux"
-                      autofocus="true"></form:input>
+          <p>Choose your Apartment class:</p>
+          <form>
+             <input type="radio"  id="prefApClass" name="prefApClass" value="Econom" path="prefApClass">
+             <label for="Ecomon">Econom</label><br>
+             <input type="radio"  id="prefApClass" name="prefApClass" value="Standart" path="prefApClass">
+             <label for="Standart">Standart</label><br>
+             <input type="radio"  id="prefApClass" name="prefApClass" value="Lux" path="prefApClass">
+             <label for="Lux">Lux</label><br>
+          </form>
           <form:errors path="prefApClass"></form:errors>
             ${prefApClassError}
     </li>
     <li>
-          <form:input type="text" path="prefApSize" placeholder="Choose number of rooms in your apartment: 1 , 2 or 3"
-                      autofocus="true"></form:input>
+          <p>Choose number of rooms in your apartment:</p>
+          <form:input type="number"  id="prefApSize" name="prefApSize" path="prefApSize" value="1" min="1" max="3"
+                                autofocus="true"></form:input>
           <form:errors path="prefApSize"></form:errors>
              ${prefApSizeError}
     </li>

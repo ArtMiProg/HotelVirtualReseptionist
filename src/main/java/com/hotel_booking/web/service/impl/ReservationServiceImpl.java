@@ -33,6 +33,11 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
+    public Reservation getByPrefApClass(String prefApClass){
+        return reservationRepository.getReservationsByPrefApClass(prefApClass);
+    };
+
+    @Override
     public List<Reservation> getReservationsByUserId(Integer userId) {
         return reservationRepository.getReservationsByUserId(userId);
     }
@@ -45,11 +50,6 @@ public class ReservationServiceImpl implements ReservationService {
     @Override
     public boolean save(Reservation reservation) {
 
-        Reservation verifiedReservation = reservationRepository
-                .getReservationByCheckInDate(reservation.getCheckInDate());
-        if (verifiedReservation != null) {
-            return false;
-        }
         if (reservation.getCheckInDate().before(calendar.getTime())) {
             return false;
         }

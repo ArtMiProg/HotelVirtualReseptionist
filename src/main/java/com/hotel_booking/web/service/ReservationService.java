@@ -10,6 +10,8 @@ public interface ReservationService {
 
     Reservation getById(Integer reservationNumber);
 
+    Reservation getByPrefApClass(String prefApClass);
+
     List<Reservation> getReservationsByUserId(Integer userId);
 
     Reservation getByCheckInDate(Date checkInDate);

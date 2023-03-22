@@ -38,6 +38,8 @@
               <input type="hidden" name="userId" value="${reservation.userId}"/>
               <input type="hidden" name="checkInDate" value="${reservation.checkInDate}"/>
               <input type="hidden" name="checkOutDate" value="${reservation.checkOutDate}"/>
+              <input type="hidden" name="prefApClass" value="${reservation.prefApClass}"/>
+              <input type="hidden" name="prefApSize" value="${reservation.prefApSize}"/>
               <input type="hidden" name="action" value="review"/>
               <button type="submit">Review</button>
             </form>

@@ -28,6 +28,7 @@ public class Reservation {
     @Column(name = "state")
     private Boolean isConfirmed = false;
 
+
     public Reservation() {
 
     }

@@ -50,8 +50,9 @@
    </table>
 </div>
 <div id="footer">
-   <a href="/apartChoosing">Select your apartment features</a><br>
+   <a href="/apartmentView">Discover our apartments</a><br>
    OR<br>
+
    <a href="/reservation">Go to booking</a><br>
    OR<br>
    <a href="/">Return to main page</a>
