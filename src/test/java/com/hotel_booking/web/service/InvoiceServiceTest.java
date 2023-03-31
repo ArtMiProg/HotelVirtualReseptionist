@@ -16,8 +16,11 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -74,15 +77,20 @@ public class InvoiceServiceTest {
     @Test
     public void testSetInvoice() {
         Invoice discount = new Invoice();
-        Date inDate = new Date(2022, 8, 1);
-        discount.setCheckInDate(inDate);
+        Integer id = 1001;
+        discount.setId(id);
         discount.setNumber(7);
+        discount.setCheckInDate(Date.valueOf(LocalDate.now()));
+        discount.setCheckOutDate(Date.valueOf(LocalDate.now().plusDays(1)));
         Reservation res = new Reservation();
-        res.setCheckInDate(discount.getCheckInDate());
+        res.setReservationNumber(discount.getId());
         res.setIsConfirmed(true);
         ApartNumber luxury = new ApartNumber();
         luxury.setNumber(7);
-        when(reservationRepository.getReservationByCheckInDate(inDate)).thenReturn(res);
+        Set<LocalDate> defaultDates = LocalDate.now().minusDays(1).datesUntil(LocalDate.now().plusDays(1))
+                .collect(Collectors.toSet());
+        luxury.setDatesWhenOccupied(defaultDates);
+        when(reservationRepository.getById(discount.getId())).thenReturn(res);
         when(apartNumberRepository.getApartNumberByNumber(luxury.getNumber())).thenReturn(luxury);
         invoiceServiceImpl.setInvoice(discount);
         verify(invoiceRepository, times(1)).save(any(Invoice.class));

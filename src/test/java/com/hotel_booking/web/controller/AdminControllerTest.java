@@ -10,6 +10,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.util.Arrays;
 
@@ -31,7 +33,10 @@ public class AdminControllerTest {
 
     @Before
     public void init() {
-        MockitoAnnotations.openMocks(this);
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setPrefix("/main/webapp/WEB-INF/views/");
+        viewResolver.setSuffix(".jsp");
+        mockMvc = MockMvcBuilders.standaloneSetup(adminController).setViewResolvers(viewResolver).build();
     }
 
     @Test
@@ -64,7 +69,7 @@ public class AdminControllerTest {
                                 hasProperty("id", is(1)),
                                 hasProperty("name", is("Sam")),
                                 hasProperty("surname", is("Morning")),
-                                hasProperty("roleId", is("6")),
+                                hasProperty("roleId", is(6)),
                                 hasProperty("username", is("SamMorning")),
                                 hasProperty("password", is("55555")),
                                 hasProperty("passwordConfirm", is("55555"))
@@ -75,7 +80,7 @@ public class AdminControllerTest {
                                 hasProperty("id", is(2)),
                                 hasProperty("name", is("July")),
                                 hasProperty("surname", is("Quin")),
-                                hasProperty("roleId", is("6")),
+                                hasProperty("roleId", is(6)),
                                 hasProperty("username", is("JulyQuin")),
                                 hasProperty("password", is("55555")),
                                 hasProperty("passwordConfirm", is("55555"))

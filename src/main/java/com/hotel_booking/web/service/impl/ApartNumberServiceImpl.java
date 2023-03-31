@@ -9,11 +9,7 @@ import com.hotel_booking.web.model.repository.ApartSizeRepository;
 import com.hotel_booking.web.service.ApartNumberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.awt.*;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
